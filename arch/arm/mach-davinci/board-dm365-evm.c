@@ -173,9 +173,12 @@ static struct at24_platform_data eeprom_info = {
 	.context	= (void *)0x7f00,
 };
 
+#if defined(CONFIG_SND_DM365_AIC3X_CODEC) || \
+    defined(CONFIG_SND_DM365_VOICE_CODEC)
 static struct snd_platform_data dm365_evm_snd_data = {
 	.asp_chan_q = EVENTQ_3,
 };
+#endif
 
 static struct i2c_board_info i2c_info[] = {
 	{
